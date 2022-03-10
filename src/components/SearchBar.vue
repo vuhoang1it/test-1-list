@@ -77,6 +77,9 @@ export default defineComponent({
     },
     deleteItem(val: SearchDTO) {
       this.$emit('delete', val);
+      const index = this.itemsToDisplay.indexOf(val);
+      if(index > -1) 
+        this.itemsToDisplay.splice(index, 1);
     },
   },
   created() {
